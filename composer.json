@@ -3,7 +3,7 @@
   "description": "Code.education repository pattern library based in Laravel",
   "license": "MIT",
   "keywords": [
-    "laravel", "repository", "Categories", "polimorphism"
+    "laravel", "repository", "Categories", "Category", "polimorphism"
   ],
   "author": [
     {
