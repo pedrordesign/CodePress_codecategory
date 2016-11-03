@@ -1,5 +1,17 @@
 {
-  "name": "codepress/code-category",
+  "name": "perdroramos/code-category",
+  "description": "Code.education repository pattern library based in Laravel",
+  "license": "MIT",
+  "keywords": [
+    "laravel", "repository", "Categories", "polimorphism"
+  ],
+  "author": [
+    {
+      "name": "Pedro Ramos",
+      "email": "pedro@pedrordesign.com.br"
+    }
+  ],
+  "homepage": "http://www.pedrordesign.com.br",
   "require": {
     "php": ">=5.6.4",
     "illuminate/contracts": "~5.3",
