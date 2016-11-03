@@ -8,9 +8,8 @@
     "illuminate/database": "~5.3",
     "illuminate/validation": "~5.3",
     "cviebrock/eloquent-sluggable": "~4.1",
-    "pedroramos/code-database": "1.0.x-dev"
+    "pedroramos/code-database": "0.0.1"
   },
-  "minimum-stability": "dev",
   "require-dev": {
     "phpunit/phpunit": "~5.0",
     "orchestra/testbench": "~3.3",
@@ -18,8 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CodePress\\CodeCategory\\": "src/CodeCategory/",
-      "CodePress\\CodeDatabase\\": "../codedatabase/src/CodeDatabase/"
+      "CodePress\\CodeCategory\\": "src/CodeCategory/"
     }
   }
 }

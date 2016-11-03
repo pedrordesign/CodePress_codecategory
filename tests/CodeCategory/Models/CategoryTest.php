@@ -3,6 +3,7 @@
 namespace CodePress\CodeCategory\Tests\Models;
 
 use CodePress\CodeCategory\Models\Category;
+use CodePress\CodeCategory\Models\Post;
 use CodePress\CodeCategory\Tests\AbstractTestCase;
 use Illuminate\Validation\Validator;
 use Mockery as m;
@@ -14,6 +15,21 @@ class CategoryTest extends AbstractTestCase
         parent::setUp();
         $this->migrate();
     }
+
+    public function test_a(){
+        $category = Category::create(['name'=>'Category Test', 'active' => true]);
+        $category2 = Category::create(['name'=>'Category Test', 'active' => true]);
+        $post = Post::create(['title' => 'meu post']);
+        $post2 = Post::create(['title' => 'meu post2']);
+
+        $post->categories()->save($category);
+        $post->categories()->save($category2);
+        //$post2->categories()->save($category);
+
+        dd($category->all());
+
+    }
+
 
     public function test_inject_validator_in_category_model()
     {

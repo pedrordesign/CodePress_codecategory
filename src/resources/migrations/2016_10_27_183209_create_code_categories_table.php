@@ -20,6 +20,8 @@ class CreateCodeCategoriesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->boolean('active')->default(false);
+            $table->integer('categorizable_id')->nullable();
+            $table->string('categorizable_type')->nullable();
             $table->timestamps();
         });
     }

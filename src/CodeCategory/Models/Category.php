@@ -83,9 +83,9 @@ class Category extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function categorizable()
+    public function posts()
     {
-        return $this->morphTo();
+        return $this->morphedByMany('\CodePress\CodeCategory\Models\Post', 'categorizable', 'codepress_categorizables');
     }
 
     /**
