@@ -2,9 +2,6 @@
 
 namespace CodePress\CodeCategory\Controllers;
 
-
-use CodePress\CodeCategory\Models\Category;
-//use CodePress\CodeCategory\Repository\CategoryRepository;
 use CodePress\CodeCategory\Repository\CategoryRepositoryInterface;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
