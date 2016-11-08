@@ -20,8 +20,15 @@
     "illuminate/database": "~5.3",
     "illuminate/validation": "~5.3",
     "cviebrock/eloquent-sluggable": "~4.1",
-    "pedroramos/code-database": "0.0.1"
+    "pedroramos/code-database": "0.0.1",
+    "pedrordesign/CodePress_codeuser": "dev-master"
   },
+  "repositories" : [
+    {
+      "type": "vcs",
+      "url": "https://github.com/pedrordesign/CodePress_codeuser.git"
+    }
+  ],
   "require-dev": {
     "phpunit/phpunit": "~5.0",
     "orchestra/testbench": "~3.3",
