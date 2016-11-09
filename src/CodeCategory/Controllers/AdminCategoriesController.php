@@ -44,11 +44,15 @@ class AdminCategoriesController extends Controller
         return redirect()->route('admin.categories.index');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $category = $this->repository->find($id);
         //$user = Auth::user();
-        if(!Gate::/*forUser($user)->*/allows('update-category', $category)){ abort(403);}
+
+        if($request->user()->cannot('update-category', $category)){
+            abort(403);
+        }
+        //if(!Gate::/*forUser($user)->*/allows('update-category', $category)){ abort(403);}
 
         //Gate::allows('update-category', $category);
 
