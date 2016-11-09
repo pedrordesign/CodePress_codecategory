@@ -31,10 +31,10 @@
                         <td>{{ $category->user->email }}</td>
                         <td>{{ $category->created_at}}</td>
                         <td>
-                            @can('update-category', $category)
-                            <a href="{{route('admin.categories.edit', ['id' => $category->id])}}">
-                                Edit
-                            </a>
+                            @can('update', $category)
+                                <a href="{{route('admin.categories.edit', ['id' => $category->id])}}">
+                                    Edit
+                                </a>
                             @else
                                 Acesso não autorizado
                             @endcan

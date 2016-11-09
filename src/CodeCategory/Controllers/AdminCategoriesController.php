@@ -49,7 +49,10 @@ class AdminCategoriesController extends Controller
         $category = $this->repository->find($id);
         //$user = Auth::user();
 
-        if($request->user()->cannot('update-category', $category)){
+        /*if($request->user()->cannot('update-category', $category)){
+            abort(403);
+        }*/
+        if($request->user()->cannot('update', $category)){
             abort(403);
         }
         //if(!Gate::/*forUser($user)->*/allows('update-category', $category)){ abort(403);}
