@@ -14,7 +14,9 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Parent</th>
                     <th>Status</th>
+                    <th>User</th>
                     <th>Date</th>
                     <th>Action</th>
                 </tr>
@@ -24,9 +26,15 @@
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
+                        <td>{{ $category->parent_id }}</td>
                         <td>{{ $category->active }}</td>
+                        <td>{{ $category->user->email }}</td>
                         <td>{{ $category->created_at}}</td>
-                        <td></td>
+                        <td>
+                            <a href="{{route('admin.categories.edit', ['id' => $category->id])}}">
+                                Edit
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

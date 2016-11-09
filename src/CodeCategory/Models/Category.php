@@ -2,6 +2,7 @@
 
 namespace CodePress\CodeCategory\Models;
 
+use CodePress\CodeUser\Models\User;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Validation\Validator;
@@ -102,5 +103,9 @@ class Category extends Model
     public function children()
     {
         return $this->hasMany(Category::class, 'parent_id');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

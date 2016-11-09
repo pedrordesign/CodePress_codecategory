@@ -4,7 +4,7 @@ Route::group([
         'prefix' => 'admin/categories',
         'as' => 'admin.categories.',
         'namespace'=>'CodePress\CodeCategory\Controllers',
-        'middleware' => ['web', 'auth']
+        'middleware' => ['web']//, 'auth']
     ],
     function(){
 

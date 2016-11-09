@@ -2,9 +2,12 @@
 
 namespace CodePress\CodeCategory\Controllers;
 
+use CodePress\CodeCategory\Models\Category;
 use CodePress\CodeCategory\Repository\CategoryRepositoryInterface;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class AdminCategoriesController extends Controller
 {
@@ -43,6 +46,13 @@ class AdminCategoriesController extends Controller
 
     public function edit($id)
     {
+        $category = Category::find($id);
+        $user = Auth::user();
+        if(!Gate::forUser($user)->allows('update-category', $category)){
+            $categories = $this->repository->all();
+            return $this->response->view('codecategory::index', compact('categories'));
+        }
+
         $category = $this->repository->find($id);
         $categories = $this->repository->all();
         return $this->response->view('codecategory::edit', compact('category', 'categories'));
