@@ -60,9 +60,14 @@ class AdminCategoriesController extends Controller
             abort(403);
         }*/
 
-        if(!policy($category)->update($request->user(), $category)){
+        /*if(!policy($category)->update($request->user(), $category)){
             abort(403);
-        }
+        }*/
+
+        //$this->authorize('update', $category);
+
+        $this->authorizeForUser($request->user(), 'update', $category);
+
 
         $category = $this->repository->find($id);
         $categories = $this->repository->all();
