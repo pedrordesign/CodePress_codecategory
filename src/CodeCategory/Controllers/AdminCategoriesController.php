@@ -48,7 +48,7 @@ class AdminCategoriesController extends Controller
     {
         $category = $this->repository->find($id);
         //$user = Auth::user();
-        if(!Gate::/*forUser($user)->*/allows('update-category', [$category, 'Branches'])){
+        if(!Gate::/*forUser($user)->*/allows('update-category', $category)){
             $categories = $this->repository->all();
             return $this->response->view('codecategory::index', compact('categories'));
         }
