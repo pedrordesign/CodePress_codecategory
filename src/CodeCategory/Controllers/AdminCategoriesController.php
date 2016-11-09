@@ -48,9 +48,9 @@ class AdminCategoriesController extends Controller
     {
         $category = $this->repository->find($id);
         //$user = Auth::user();
-        //if(!Gate::/*forUser($user)->*/allows('update-category', $category)){
+        if(!Gate::/*forUser($user)->*/allows('update-category', $category)){ abort(403);}
 
-        Gate::allows('update-category', $category);
+        //Gate::allows('update-category', $category);
 
 
         $category = $this->repository->find($id);
