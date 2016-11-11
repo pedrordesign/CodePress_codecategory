@@ -26,6 +26,7 @@ class AdminCategoriesController extends Controller
      */
     public function index()
     {
+        $this->authorize('categories_access');
         $categories = $this->repository->all();
         return $this->response->view('codecategory::index', compact('categories'));
 
